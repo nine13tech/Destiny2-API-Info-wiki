@@ -11,7 +11,7 @@ Each request we build will follow the same concept as Part 1.  We'll open a new 
 
 The Destiny 2 API uses many different kinds of accounts, account types, and groups.  Here I'll briefly summarize the most common pieces.
 
-The first concept is membershipType and membershipId.  An account is represented by a pair of integers - the membershipType (int32) and membershipId (int64). A Bungie account is always membershipType 254.  A Destiny account has a different membershipType depending on the associated game platform with Xbox Live: 1, PlayStation Network: 2 and Battle.net: 4.  A few search related endpoints also allow the special account type of All: -1; however, most endpoints require a specific matching pair of membershipType and membershipID.
+The first concept is membershipType and membershipId.  An account is represented by a pair of integers - the membershipType (int32) and membershipId (int64). A Bungie account is always membershipType 254 and is less than 10 numerical places (digits) in length.  A Destiny account, 16 numerical places, has a different membershipType depending on the associated game platform with Xbox Live: 1, PlayStation Network: 2 and Battle.net: 4.  A few search related endpoints also allow the special account type of All: -1; however, most endpoints require a specific matching pair of membershipType and membershipID.
 
 NOTE:  In Part 1 we used the special account type of -1 in our Destiny2.SearchDestinyPlayer request.  If you only want to search a specific type of membership like say Battle.net then you can use say 4 instead of -1, which will then only return matches for that platform.
 
